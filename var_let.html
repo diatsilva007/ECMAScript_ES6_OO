@@ -11,12 +11,15 @@
     <script type="text/babel">
         // 3 escopoS: global, função e bloco
 
-        if (true) {
-            let serie = "Friends"
-                
+        var serie = 'Breaking Bad'
+
+        {
+            var serie = 'Game of Thrones'
+            console.log('Dentro do bloco: ' + serie)
         }
 
-        console.log(serie)
+        console.log('Fora do bloco: ' + serie)
+
 
     </script>
 
