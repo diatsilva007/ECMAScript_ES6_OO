@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - Const</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+        const SERIE = 'Game of Thrones'
+
+        function x() {
+            const SERIE = 'Breaking Bad'
+            console.log('Dentro da funcção: ' + SERIE)
+
+        }
+
+        x()
+
+        console.log('Escopo global: ' + SERIE)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="output"></div>
+
+</body>
+
+</html>
