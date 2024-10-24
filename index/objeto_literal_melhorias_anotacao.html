@@ -13,8 +13,35 @@
         let nome = 'Diogo';
         let idade = 30;
         let sexo = 'Masculino';
-        let profissao = 'Programadr';
+        let profissao = 'Programador';
 
+        let objeto = {
+            nome: nome,
+            idade: idade,
+            sexo: sexo,
+            profissao: profissao,
+            exibirResumo: function () {
+                console.log(`${this.nome}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`);
+            }
+
+        }
+
+        console.log(objeto)
+        objeto.exibirResumo();
+
+        let objeto2 = {
+            nomeTetste: nome,
+            idade,
+            sexo,
+            profissao,
+            exibirResumo() {
+                console.log(`${this.nomeTetste}, ${this.idade} anos, ${this.sexo} é ${this.profissao}`);
+            }
+
+        }
+
+        console.log(objeto2)
+        objeto2.exibirResumo();
 
 
     </script>
@@ -23,7 +50,7 @@
 
 <body>
 
-    
+
 
 </body>
 
