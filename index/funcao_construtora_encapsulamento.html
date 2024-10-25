@@ -10,7 +10,24 @@
 
     <script type="text/babel">
 
-        
+        let Carro = function () {
+            this.cor = 'Prata'
+            this.modelo = 'Siena'
+            this.velocidadeAtual = 0
+            this.velocidadeMaxima = 180
+
+            this.acelerar = function () {
+                let velocidade = this.getVelocidadeAutal() + 10
+                this.setVelocidadeAtual(velocidade)
+
+            }
+            this.getVelocidadeAutal = function () {
+                return this.velocidadeAtual
+            }
+            this.setVelocidadeAtual = function (velocidadeAtual) {
+                this.velocidadeAtual = velocidadeAtual
+            }
+        }
 
     </script>
 
