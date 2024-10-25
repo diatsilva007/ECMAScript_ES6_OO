@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - Função factory</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        // Requisição http
+        // Resposta http
+        let Bicileta1 = {
+            cor: 'Branca e preta',
+            marca: 'GTS',
+            aro: 27,
+            velocidade: 21,
+            rodas: 2,
+            pedalar() { console.log('Método pedalar executado') }
+        }
+
+        // Requisição http
+        // Resposta http
+        let Bicileta2 = {
+            cor: 'Azul e branca',
+            marca: 'Caloi',
+            aro: 26,
+            velocidade: 18,
+            rodas: 2,
+            pedalar() {
+                console.log('Método pedalar executado')
+            }
+        }
+
+        console.log(Bicileta1);
+        console.log(Bicileta2)
+        // ----------------------------------------------------------------
+
+        // Função factory
+        let BicicletaFactory = function (cor, marcha, aro) {
+            //Lógica
+            // Requisição http
+            // Resposta http
+            return {
+                cor,
+                marcha,
+                aro,
+                velocidade: 0,
+                rodas: 2,
+                pedalar() { console.log('Método pedalar executado') }
+            }
+        }
+
+        let Bicicleta3 = BicicletaFactory('Vermelha', '18', 26);
+        console.log(Bicicleta3);
+
+        let Bicicleta4 = BicicletaFactory('Preta', '21', 29);
+        console.log(Bicicleta4);
+
+        //console.log(`Cor: ${Bicicleta3.cor}`)
+        //Bicicleta3.pedalar();
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="output"></div>
+
+</body>
+
+</html>
