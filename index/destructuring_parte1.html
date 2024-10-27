@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - Destructuring assignment parte 1</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //Destructuring / operador de desestruturação
+
+        let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+
+        //let [a, b, , C] = frutas // Pular um índice
+
+        let [a, b = 'Abacate', C, d, e = 'Banana'] = frutas // Utilizando parâmetros default
+
+        //console.log(a, b, C, d, e)
+        let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['Diogo', 'Solange']]
+        let [, [,n2]] = coisas
+
+        console.log(n2)
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
