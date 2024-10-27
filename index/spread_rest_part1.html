@@ -10,7 +10,27 @@
 
     <script type="text/babel">
 
-        
+        // Contexto spread
+
+        //String
+        let TituloArtigo = 'Como utilizar o operador rest/spread'
+
+        console.log(TituloArtigo);
+        console.log(...TituloArtigo);
+        console.log([...TituloArtigo]);
+
+        //Arrays
+        let listaCurso1 = ['NodeJs e MongoDB', 'ES6, TypeScript e Angular 4']
+        let listaCurso2 = ['React Native', 'Python e Django']
+        let listaCursoCompleto = [...listaCurso1, 'Web completo', ...listaCurso2, 'Android completo']
+
+        console.log(listaCursoCompleto)
+
+        //Objetos
+        let pessoa = { nome: 'Diogo', idade: 30, cidade: 'Andrelândia' }
+        let clone = { endereço: 'Rua ABC', ...pessoa }
+
+        console.log(clone)
 
     </script>
 
