@@ -12,17 +12,32 @@
 
         //Destructuring / operador de desestruturação
 
-        let frutas = ['Abacaxi', 'Uva', 'Pera', 'Mamão']
+        let produto = {
+            descricao: 'Notebook',
+            preco: 2200,
+            detalhes: {
+                fabricante: 'Asus',
+                modelo: 'TUF Gaming F15',
+                processador: 'Intel Core i7-10750H',
+                memória: '16GB DDR4 3200MHz',
+                SSD: 'SSD 512GB M.2 NVMe'
+            }
+        }
 
-        //let [a, b, , C] = frutas // Pular um índice
+        //Token
+        //Array => []
+        //Objeto => {}
 
-        let [a, b = 'Abacate', C, d, e = 'Banana'] = frutas // Utilizando parâmetros default
+        //let { descricao, preco} = produto;
 
-        //console.log(a, b, C, d, e)
-        let coisas = [['Abacaxi', 'Uva', 'Pera', 'Mamão'], ['Diogo', 'Solange']]
-        let [, [,n2]] = coisas
+        //let { descricao: d, preco: p} = produto;
 
-        console.log(n2)
+        //let { descricao: d, preco: p, desconto} = produto;
+
+        //let { descricao: d, preco: p = 1000, desconto = 5} = produto;
+
+        let { detalhes: {fabricante: f, modelo: m, processador: p, memória: mm, SSD: s} } = produto;
+        console.log(f, m, p, mm, s);
 
     </script>
 
@@ -34,4 +49,4 @@
 
 </body>
 
-</html>
+</html> 
