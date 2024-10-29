@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - Destructuring assignment parte 3</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //Destructuring / operador de desestruturação
+
+        let produto = {
+            descricao: 'Notebook',
+            preco: 2200,
+            detalhes: {
+                fabricante: 'Asus',
+                modelo: 'TUF Gaming F15',
+                processador: 'Intel Core i7-10750H',
+                memória: '16GB DDR4 3200MHz',
+                SSD: 'SSD 512GB M.2 NVMe'
+            }
+        }
+
+        //Token
+        //Array => []
+        //Objeto => {}
+
+        //let { descricao, preco} = produto;
+
+        //let { descricao: d, preco: p} = produto;
+
+        //let { descricao: d, preco: p, desconto} = produto;
+
+        //let { descricao: d, preco: p = 1000, desconto = 5} = produto;
+
+        let { detalhes: {fabricante: f, modelo: m, processador: p, memória: mm, SSD: s} } = produto;
+        console.log(f, m, p, mm, s);
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>     
