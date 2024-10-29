@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 - Destructuring assignment parte 4</title>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        //Destructuring / operador de desestruturação
+
+        //Array 
+
+        /*let arr = [10, 20, 30, 40];
+x
+        let [ a, ...x ] = arr
+
+        console.log(a); // 10
+        console.log(x); // [20, 30, 40]*/
+
+        let obj = {
+            a: 10, b: 20, c: 30, d: 40
+        }
+
+        let { a, ...y } = obj
+
+        console.log(a); // 10
+        console.log(y); // {b: 20, c: 30, d: 40}
+        
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>
