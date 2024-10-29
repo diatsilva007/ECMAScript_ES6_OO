@@ -12,32 +12,30 @@
 
         //Destructuring / operador de desestruturação
 
-        let produto = {
-            descricao: 'Notebook',
-            preco: 2200,
-            detalhes: {
-                fabricante: 'Asus',
-                modelo: 'TUF Gaming F15',
-                processador: 'Intel Core i7-10750H',
-                memória: '16GB DDR4 3200MHz',
-                SSD: 'SSD 512GB M.2 NVMe'
-            }
+        //Array
+
+        /*let arr = [10, 20, 30, 40];
+
+        function teste([a, b, , c, d = 100]) {
+            console.log(a, b, c, d);
+
         }
 
-        //Token
-        //Array => []
-        //Objeto => {}
+        teste(arr);*/
 
-        //let { descricao, preco} = produto;
+        // Objeto
+        let obj = {
+            a: 10,
+            b: 20,
+            c: 30,
+            d: 40
+        }
 
-        //let { descricao: d, preco: p} = produto;
+        function teste({ a: x, d, z = 10 }) {
+            console.log(x, d, z);
+        }
 
-        //let { descricao: d, preco: p, desconto} = produto;
-
-        //let { descricao: d, preco: p = 1000, desconto = 5} = produto;
-
-        let { detalhes: {fabricante: f, modelo: m, processador: p, memória: mm, SSD: s} } = produto;
-        console.log(f, m, p, mm, s);
+        teste(obj)
 
     </script>
 
@@ -49,4 +47,4 @@
 
 </body>
 
-</html>     
+</html>
