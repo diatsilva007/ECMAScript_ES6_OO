@@ -1,42 +1,39 @@
 <!DOCTYPE html>
-<html lang="en" lang="pt-br">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ES6 - Destructuring assignment parte </title>
+  <title></title>
 
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-    <script type="text/babel">
+  <script type="text/babel">
 
-        //Destructuring / operador de desestruturação
+    //array
+    /*  let arr = [10, 20, 30, 40]
+ 
+     function teste([a, b, c, d = 100]){
+       console.log(a, b, c)
+     }
+ 
+     teste(arr) */
 
-        //Array 
+    //objeto
+    let obj = {
+      a: 10,
+      b: 20,
+      c: 30,
+      d: 40
+    }
+    function teste({ a: x, d, z = 10 }) {
+      console.log(x, d)
+    }
 
-        /*let arr = [10, 20, 30, 40];
-x
-        let [ a, ...x ] = arr
-
-        console.log(a); // 10
-        console.log(x); // [20, 30, 40]*/
-
-        let obj = {
-            a: 10, b: 20, c: 30, d: 40
-        }
-
-        let { a, ...y } = obj
-
-        console.log(a); // 10
-        console.log(y); // {b: 20, c: 30, d: 40}
-        
-    </script>
+    teste(obj)
+  </script>
 
 </head>
 
 <body>
-
-
 
 </body>
 
