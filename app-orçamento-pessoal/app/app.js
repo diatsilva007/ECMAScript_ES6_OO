@@ -40,6 +40,10 @@ class Bd {
 
 		localStorage.setItem('id', id)
 	}
+
+	recuperarTodosRegistros() {
+		console.log('Estamos chegando até aqui')
+	}
 }
 
 let bd = new Bd()
@@ -86,4 +90,8 @@ function cadastrarDespesa() {
 		//dialog de erro
 		$('#modalRegistraDespesa').modal('show') 
 	}
+}
+
+function carregaListaDespesas() {
+	bd.recuperarTodosRegistros()
 }
