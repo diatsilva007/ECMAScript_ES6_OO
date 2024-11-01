@@ -9,8 +9,8 @@ class Despesa {
 	}
 
 	validarDados() {
-		for(let i in this) {
-			if(this[i] == undefined || this[i] == '' || this[i] == null) {
+		for (let i in this) {
+			if (this[i] == undefined || this[i] == '' || this[i] == null) {
 				return false
 			}
 		}
@@ -23,7 +23,7 @@ class Bd {
 	constructor() {
 		let id = localStorage.getItem('id')
 
-		if(id === null) {
+		if (id === null) {
 			localStorage.setItem('id', 0)
 		}
 	}
@@ -42,7 +42,28 @@ class Bd {
 	}
 
 	recuperarTodosRegistros() {
-		console.log('Estamos chegando até aqui')
+
+		// Array de despesas
+		let despesas = Array()
+
+		let id = localStorage.getItem('id')
+
+		//recuperar todas as despesas cadastradas em localStorage
+		for (let i = 1; i <= id; i++) {
+
+			//recuperar despesa
+			let despesa = JSON.parse(localStorage.getItem(i))
+
+			//existe a possibilidade da haver índices que foram pulados;removidos
+			//nestes casos nós vamos pular estes índices
+			if (despesa === null) {
+				continue; //pula para a próxima iteração do loop
+			}
+
+			despesas.push(despesa)
+		}
+
+		return despesas
 	}
 }
 
@@ -59,16 +80,16 @@ function cadastrarDespesa() {
 	let valor = document.getElementById('valor')
 
 	let despesa = new Despesa(
-		ano.value, 
-		mes.value, 
-		dia.value, 
-		tipo.value, 
+		ano.value,
+		mes.value,
+		dia.value,
+		tipo.value,
 		descricao.value,
 		valor.value
 	)
 
 
-	if(despesa.validarDados()) {
+	if (despesa.validarDados()) {
 		//bd.gravar(despesa)
 
 		document.getElementById('modal_titulo').innerHTML = 'Registro inserido com sucesso'
@@ -78,9 +99,9 @@ function cadastrarDespesa() {
 		document.getElementById('modal_btn').className = 'btn btn-success'
 
 		//dialog de sucesso
-		$('#modalRegistraDespesa').modal('show') 
+		$('#modalRegistraDespesa').modal('show')
 	} else {
-		
+
 		document.getElementById('modal_titulo').innerHTML = 'Erro na inclusão do registro'
 		document.getElementById('modal_titulo_div').className = 'modal-header text-danger'
 		document.getElementById('modal_conteudo').innerHTML = 'Erro na gravação, verifique se todos os campos foram preenchidos corretamente!'
@@ -88,10 +109,15 @@ function cadastrarDespesa() {
 		document.getElementById('modal_btn').className = 'btn btn-danger'
 
 		//dialog de erro
-		$('#modalRegistraDespesa').modal('show') 
+		$('#modalRegistraDespesa').modal('show')
 	}
 }
 
 function carregaListaDespesas() {
-	bd.recuperarTodosRegistros()
+
+	let despesas = Array()
+
+	despesas = bd.recuperarTodosRegistros()
+
+	console.log(despesas)
 }
